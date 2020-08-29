@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <script>
-
-    function download() {
-
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+    
+    function download() 
+    {
       var data = '';
       var tableData = [];
-      
       var firstname = [
         'Günter',
         'Tobias',
@@ -110,8 +110,8 @@
         'Chantal',
         'Ulrike',
         'Lea'
-
       ];
+
       var lastname = [
         'Knab',
         'Weser',
@@ -420,6 +420,7 @@
         '99',
         '21'
       ]
+
       var zipCode = [
         55758,
         54636,
@@ -899,14 +900,15 @@
         'comdirect bank'
       ]
 
-      var sex = [
+      var sex =  [
         'm',
         'w'
       ]
 
 
       //generate random 1 million mock data and push it into the table 
-      for (var i = 0; i <= 1000000; ++i) {
+      for (var i = 0; i <= 1000000; ++i) 
+      {
         var randomefirstname = Math.floor(Math.random() * firstname.length);
         var randomelastname = Math.floor(Math.random() * lastname.length);
         var randomestreet = Math.floor(Math.random() * street.length);
@@ -923,12 +925,11 @@
       }
 
       //duplicate randome the data and push it into the table
-      for (var i = 0; i <= 100; ++i) {
+      for (var i = 0; i <= 100; ++i) 
+      {
         var randome = Math.floor(Math.random() * tableData.length);
         tableData.push(tableData[randome]);
       }
-
-
       //the table get sorted in lines 
       data += tableData.join('\n');
       //creates a link to download 
@@ -939,10 +940,12 @@
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+
     }
 
     //generate the iban numbers randomly
-    function ibanGen(length) {
+    function ibanGen(length) 
+    {
       var result = 'DE';
       var numbers = '0123456789'
 
@@ -953,11 +956,12 @@
     }
 
     //generate the email
-    function emailGen(firstname, lastname) {
+    function emailGen(firstname, lastname) 
+    {
       var email = '';
       var length = firstname.length + lastname.length;
-
       var name = firstname + lastname;
+
       for (var i = 0; i < length; i++)
         email += name.charAt(Math.floor(Math.random() * name.length));
 
@@ -966,9 +970,33 @@
 
   </script>
 </head>
-
 <body>
-  <button onclick='download()'>download</button>
+  <section>
+    <div id="loader">
+      <span style="--i:1"></span>
+      <span style="--i:2"></span>
+      <span style="--i:3"></span>
+      <span style="--i:4"></span>
+      <span style="--i:5"></span>
+      <span style="--i:6"></span>
+      <span style="--i:7"></span>
+      <span style="--i:8"></span>
+      <span style="--i:9"></span>
+      <span style="--i:10"></span>
+      <span style="--i:11"></span>
+      <span style="--i:12"></span>
+      <span style="--i:13"></span>
+      <span style="--i:14"></span>
+      <span style="--i:15"></span>
+      <span style="--i:16"></span>
+      <span style="--i:17"></span>
+      <span style="--i:18"></span>
+      <span style="--i:19"></span>
+      <span style="--i:20"></span>
+    </div>
+  </section>
+  <div class="wrapper">
+    <button class="button" onclick='download()'>download</button>
+  </div>
 </body>
-
 </html>
