@@ -1,7 +1,7 @@
 # machine_learning_dataset_mockdata (german use-case)
 A simplified way to generate massive mock data for machine learning **to check for duplicate** and train a model.<br>
 This dataset contains more than 1 million meticulously cleaned up, duplicated and preprocessed customer data.<br>
-Just open the .html file and the press the download button. 
+Just open the .html file and the press the download button and wait a couple of seconds. 
 <br>
 <br>
 The output of the data is separated through a `;` and has a format like in the table below (fell free to change it):<br>
