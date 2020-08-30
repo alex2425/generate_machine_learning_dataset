@@ -4,7 +4,9 @@ Just open the .html file and the press the download button.
 <br>
 <br>
 The output of the data is in this format (fell free to change it):<br>
-firstname | lastname | sex | street | house number | zip code | city | phone number | email | iban | bankname
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
+
+
+| firstname  | lastname | sex  | street | house number  | zip code | city | phone number | email  | iban | bankname |
+| ---------- | -------- | ---- | ------ | ------------- | -------- | ---- | ------------ | ------ | ---- | -------- |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
