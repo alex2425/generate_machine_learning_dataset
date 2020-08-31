@@ -311,213 +311,7 @@
         'Reinharzstraße',
         'Hufschmiedskamp'
       ];
-
-      var houseNumber = [
-        '52',
-        '62',
-        '188',
-        '1',
-        '42',
-        '194',
-        '77',
-        '65',
-        '2',
-        '165',
-        '105',
-        '68',
-        '181',
-        '45',
-        '154',
-        '75',
-        '153',
-        '134',
-        '71',
-        '100',
-        '78',
-        '48',
-        '161',
-        '1',
-        '146',
-        '157',
-        '16',
-        '74',
-        '163',
-        '156',
-        '39',
-        '180',
-        '195',
-        '67',
-        '40',
-        '69',
-        '45',
-        '136',
-        '154',
-        '146',
-        '183',
-        '170',
-        '167',
-        '11',
-        '129',
-        '48',
-        '46',
-        '65',
-        '160',
-        '55',
-        '132',
-        '104',
-        '129',
-        '1 b',
-        '67',
-        '200',
-        '89',
-        '12',
-        '50',
-        '90',
-        '42',
-        '96',
-        '194',
-        '77',
-        '1',
-        '193',
-        '135',
-        '23',
-        '108',
-        '166',
-        '118',
-        '24',
-        '115 c',
-        '149',
-        '51',
-        '159',
-        '31',
-        '66',
-        '97',
-        '151',
-        '51',
-        '152',
-        '11',
-        '124',
-        '69',
-        '31',
-        '36',
-        '146',
-        '166',
-        '16',
-        '126',
-        '63',
-        '77',
-        '164',
-        '149',
-        '131',
-        '195',
-        '145',
-        '99',
-        '21'
-      ]
-
-      var zipCode = [
-        55758,
-        54636,
-        82431,
-        79341,
-        56472,
-        17309,
-        66894,
-        2586,
-        66687,
-        24106,
-        6724,
-        94259,
-        27243,
-        23898,
-        84367,
-        8341,
-        61381,
-        89364,
-        29488,
-        56346,
-        54597,
-        96154,
-        79837,
-        64689,
-        56424,
-        25917,
-        3847,
-        94371,
-        67706,
-        56332,
-        74582,
-        55569,
-        97252,
-        49477,
-        88239,
-        49453,
-        74219,
-        33602,
-        85276,
-        72411,
-        59755,
-        27299,
-        40474,
-        72364,
-        50937,
-        67294,
-        73728,
-        79686,
-        48529,
-        74747,
-        25856,
-        47138,
-        6144,
-        24361,
-        47829,
-        23816,
-        24217,
-        37627,
-        45661,
-        24997,
-        56414,
-        25992,
-        54426,
-        56414,
-        13129,
-        67663,
-        92339,
-        52457,
-        27321,
-        29389,
-        97255,
-        26556,
-        55481,
-        38729,
-        26524,
-        8403,
-        85307,
-        89185,
-        25836,
-        21339,
-        24407,
-        42651,
-        54668,
-        73271,
-        60314,
-        24999,
-        56414,
-        79691,
-        40477,
-        66501,
-        48268,
-        55765,
-        29499,
-        71554,
-        56288,
-        34277,
-        88281,
-        23628,
-        65779,
-        70197
-      ]
-
+	  
       var city = [
         'Untermünkheim',
         'Hamburg',
@@ -697,26 +491,26 @@
       //generate random 1 million mock data and push it into the table 
       for (var i = 0; i <= 1000000; ++i) 
       {
-        var randomefirstname = Math.floor(Math.random() * firstname.length);
-        var randomelastname = Math.floor(Math.random() * lastname.length);
-        var randomestreet = Math.floor(Math.random() * street.length);
-        var randomehausnr = Math.floor(Math.random() * houseNumber.length);
-        var randomecity = Math.floor(Math.random() * city.length);
-        var randomezipCode = Math.floor(Math.random() * zipCode.length);
-        var randomephoneNumber = numberGen(8);
-        var randomeiban = ibanGen(20);
-        var randomebank = Math.floor(Math.random() * bankname.length);
-        var randomeemail = Math.floor(Math.random() * emailprovider.length);
-        var randomesex = Math.floor(Math.random() * sex.length);
-        var emailName = emailGen(firstname[randomefirstname], lastname[randomelastname]);
-        tableData.push(firstname[randomefirstname] + ';' + lastname[randomelastname] + ';' + sex[randomesex] + ';' + street[randomestreet] + ';' + houseNumber[randomehausnr] + ';' + zipCode[randomezipCode] + ';' + city[randomecity] + ';' + randomephoneNumber + ';' + emailName.toLowerCase() + emailprovider[randomeemail] + ';' + randomeiban + ';' + bankname[randomebank]);
+        var randomfirstname = Math.floor(Math.random() * firstname.length);
+        var randomlastname = Math.floor(Math.random() * lastname.length);
+        var randomstreet = Math.floor(Math.random() * street.length);
+		var randomhousNr = houseNumberGen(Math.floor(Math.random() * ( 2 ) + 1 ));
+        var randomcity = Math.floor(Math.random() * city.length);
+		var randomzipCode = zipGen(5);
+        var randomphoneNumber = numberGen(8);
+        var randomiban = ibanGen(20);
+        var randombank = Math.floor(Math.random() * bankname.length);
+        var randomemail = Math.floor(Math.random() * emailprovider.length);
+        var randomsex = Math.floor(Math.random() * sex.length);
+        var emailName = emailGen(firstname[randomfirstname], lastname[randomlastname]);
+        tableData.push(firstname[randomfirstname] + ';' + lastname[randomlastname] + ';' + sex[randomsex] + ';' + street[randomstreet] + ';' + randomhousNr + ';' + randomzipCode + ';' + city[randomcity] + ';' + randomphoneNumber + ';' + emailName.toLowerCase() + emailprovider[randomemail] + ';' + randomiban + ';' + bankname[randombank]);
       }
 
       //duplicate random the data and push it into the table
       for (var i = 0; i <= 100; ++i) 
       {
-        var randome = Math.floor(Math.random() * tableData.length);
-        tableData.push(tableData[randome]);
+        var random = Math.floor(Math.random() * tableData.length);
+        tableData.push(tableData[random]);
       }
       //the table get sorted in lines 
       data += tableData.join('\n');
@@ -734,11 +528,10 @@
     //generate the iban numbers randomly
     function ibanGen(length) 
     {
-      var result = 'DE'; //for germany start always with (DE)
-      var numbers = '0123456789'
+      var result = 'DE'; //prefix for germany start always with (DE)
 
       for (var i = 0; i < length; i++)
-        result += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        result += Math.floor(Math.random() * 9);
 
       return result;
     }
@@ -760,17 +553,38 @@
 	function numberGen(length)
 	{
 		var result = '0';	//prefix start always with 0 (germany)
-		var vrw = '123456789';	//prefix interval
-		var numbers = '0123456789'; //number interval
-		var vrw_length = Math.floor(Math.random() * (4 - 2 +1)) + 2;	//random length between 2-4 for the prefix
+		var vrw_length = Math.floor(Math.random() * (4 - 2 + 1)) + 2;	//random length between 2-4 for the prefix
 		
 		for (var i=0;i< vrw_length; ++i)
-			result += vrw.charAt(Math.floor(Math.random() * vrw.length));
+			result += Math.floor(Math.random() * 9) + 1;
 	
 		result+='/';
 		
 		for(var i = 0; i < length; ++i)
-			result += numbers.charAt(Math.floor(Math.random() * numbers.length));
+			result += Math.floor(Math.random() * 9);
 		
 		return result;
+	}
+	
+	//generate the zip code
+	function zipGen(length)
+	{
+		var result = '';
+		
+		for (var i = 0; i < length; i++)
+			result += Math.floor(Math.random() * 9) + 1; 
+
+      return result;
+	}
+	
+	//generate the house number 
+	function houseNumberGen(length)
+	{
+		var result = '';
+		result += Math.floor(Math.random() * 9) + 1;
+
+		for (var i = 0; i < length; i++)
+			result += Math.floor(Math.random() * 9);
+
+      return result;
 	}
