@@ -491,12 +491,12 @@
       //generate random 1 million mock data and push it into the table 
       for (var i = 0; i <= 1000000; ++i) 
       {
-		var randomfirstname = Math.floor(Math.random() * firstname.length);
+		    var randomfirstname = Math.floor(Math.random() * firstname.length);
         var randomlastname = Math.floor(Math.random() * lastname.length);
         var randomstreet = Math.floor(Math.random() * street.length);
-		var randomhousNr = houseNumberGen(Math.floor(Math.random() * ( 2 ) + 1 ));
+		    var randomhousNr = houseNumberGen(Math.floor(Math.random() * ( 2 ) + 1 ));
         var randomcity = Math.floor(Math.random() * city.length);
-		var randomzipCode = zipGen(5);
+	    	var randomzipCode = zipGen(5);
         var randomphoneNumber = numberGen(8);
         var randomiban = ibanGen(20);
         var randombank = Math.floor(Math.random() * bankname.length);
@@ -586,5 +586,5 @@
 		for (var i = 0; i < length; i++)
 			result += Math.floor(Math.random() * 9);
 
-      return result;
+    return result;
 	}
