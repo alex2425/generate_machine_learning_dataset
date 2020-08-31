@@ -550,8 +550,8 @@
     }
 	
 	//generate the phone number 
-	function numberGen(length)
-	{
+    function numberGen(length)
+    {
 		var result = '0';	//prefix start always with 0 (germany)
 		var vrw_length = Math.floor(Math.random() * (4 - 2 + 1)) + 2;	//random length between 2-4 for the prefix
 		
