@@ -621,110 +621,7 @@
         'Theisseil'
       ]
 
-      var phoneNumber = [
-        '09573/24329805',
-        '03586/32641529',
-        '08637/99647572',
-        '04151/75921143',
-        '06503/79795534',
-        '02681/33669265',
-        '0261/42524969',
-        '09771/40274937',
-        '06032/16511853',
-        '02373/86736208',
-        '04522/45583386',
-        '06694/73036543',
-        '0681/62716121',
-        '09191/53980181',
-        '02776/10020220',
-        '0203/89498125',
-        '08347/96431613',
-        '07391/99061156',
-        '06183/81924967',
-        '07193/42277209',
-        '04547/72494957',
-        '02683/51615591',
-        '0911/15513520',
-        '0221/68897870',
-        '08335/77028782',
-        '05151/66439249',
-        '0611/52967852',
-        '02874/67946676',
-        '05043/57782181',
-        '03334/63442085',
-        '07256/25579794',
-        '07976/87815792',
-        '06233/15906115',
-        '02654/40244565',
-        '06147/61884259',
-        '0711/13943860',
-        '04862/44783841',
-        '05805/17365782',
-        '02672/30373226',
-        '03937/62503617',
-        '02058/81025301',
-        '02604/87779702',
-        '0441/68455665',
-        '02733/16632917',
-        '02841/53006855',
-        '08727/49512157',
-        '08670/96918620',
-        '05824/42075348',
-        '06187/4303242',
-        '02662/76444479',
-        '02692/26998447',
-        '04536/63923465',
-        '02743/86575139',
-        '02654/89469208',
-        '05225/46935826',
-        '07393/47470641',
-        '03962/43891478',
-        '03831/42901582',
-        '09778/94537054',
-        '07335/13173547',
-        '03907/65136152',
-        '08281/98520079',
-        '02651/81008634',
-        '09675/18767968',
-        '08846/66956037',
-        '03883/20756913',
-        '07945/18508490',
-        '07195/31030449',
-        '04532/4961521',
-        '06564/25318118',
-        '08124/12690793',
-        '0214/32302958',
-        '08234/73573536',
-        '030/90378075',
-        '0441/44515476',
-        '02043/35250728',
-        '04822/66335339',
-        '02421/27502815',
-        '09075/83649132',
-        '06341/81889707',
-        '04523/70882258',
-        '03937/68927656',
-        '03933/19216356',
-        '02472/58482188',
-        '06383/25356190',
-        '08252/65487898',
-        '02362/7832837',
-        '06725/82395426',
-        '08571/68955621',
-        '09644/50003654',
-        '05336/98127023',
-        '04630/89304884',
-        '06573/92871770',
-        '04151/67368999',
-        '08343/33015911',
-        '089/9127074',
-        '06203/72368708',
-        '08652/80404823',
-        '0681/31399588',
-        '05943/58648675'
-      ]
-
-      var email = [
+      var emailprovider = [
         '@gmail.com',
         '@yahoo.com',
         '@web.de',
@@ -806,16 +703,16 @@
         var randomehausnr = Math.floor(Math.random() * houseNumber.length);
         var randomecity = Math.floor(Math.random() * city.length);
         var randomezipCode = Math.floor(Math.random() * zipCode.length);
-        var randomephoneNumber = Math.floor(Math.random() * phoneNumber.length);
+        var randomephoneNumber = numberGen(8);
         var randomeiban = ibanGen(20);
         var randomebank = Math.floor(Math.random() * bankname.length);
-        var randomeemail = Math.floor(Math.random() * email.length);
+        var randomeemail = Math.floor(Math.random() * emailprovider.length);
         var randomesex = Math.floor(Math.random() * sex.length);
         var emailName = emailGen(firstname[randomefirstname], lastname[randomelastname]);
-        tableData.push(firstname[randomefirstname] + ';' + lastname[randomelastname] + ';' + sex[randomesex] + ';' + street[randomestreet] + ';' + houseNumber[randomehausnr] + ';' + zipCode[randomezipCode] + ';' + city[randomecity] + ';' + phoneNumber[randomephoneNumber] + ';' + emailName.toLowerCase() + email[randomeemail].toLowerCase() + ';' + randomeiban + ';' + bankname[randomebank]);
+        tableData.push(firstname[randomefirstname] + ';' + lastname[randomelastname] + ';' + sex[randomesex] + ';' + street[randomestreet] + ';' + houseNumber[randomehausnr] + ';' + zipCode[randomezipCode] + ';' + city[randomecity] + ';' + randomephoneNumber + ';' + emailName.toLowerCase() + emailprovider[randomeemail] + ';' + randomeiban + ';' + bankname[randomebank]);
       }
 
-      //duplicate randome the data and push it into the table
+      //duplicate random the data and push it into the table
       for (var i = 0; i <= 100; ++i) 
       {
         var randome = Math.floor(Math.random() * tableData.length);
@@ -825,7 +722,7 @@
       data += tableData.join('\n');
       //creates a link to download 
       const a = document.createElement('a');
-      //here you can change your type for example to csv
+      //here you can change your download file type for example to "csv"
       a.href = URL.createObjectURL(new Blob([data], { type: 'text/plain;charset=utf-8' }));
       a.setAttribute('download', 'mockdata.txt');
       document.body.appendChild(a);
@@ -837,7 +734,7 @@
     //generate the iban numbers randomly
     function ibanGen(length) 
     {
-      var result = 'DE';
+      var result = 'DE'; //for germany start always with (DE)
       var numbers = '0123456789'
 
       for (var i = 0; i < length; i++)
@@ -858,3 +755,22 @@
 
       return email;
     }
+	
+	//generate the phone number 
+	function numberGen(length)
+	{
+		var result = '0';	//prefix start always with 0 (germany)
+		var vrw = '123456789';	//prefix interval
+		var numbers = '0123456789'; //number interval
+		var vrw_length = Math.floor(Math.random() * (4 - 2 +1)) + 2;	//random length between 2-4 for the prefix
+		
+		for (var i=0;i< vrw_length; ++i)
+			result += vrw.charAt(Math.floor(Math.random() * vrw.length));
+	
+		result+='/';
+		
+		for(var i = 0; i < length; ++i)
+			result += numbers.charAt(Math.floor(Math.random() * numbers.length));
+		
+		return result;
+	}
