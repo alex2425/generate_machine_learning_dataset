@@ -311,7 +311,7 @@
         'Reinharzstraße',
         'Hufschmiedskamp'
       ];
-	  
+    
       var city = [
         'Untermünkheim',
         'Hamburg',
@@ -491,12 +491,12 @@
       //generate random 1 million mock data and push it into the table 
       for (var i = 0; i <= 1000000; ++i) 
       {
-		    var randomfirstname = Math.floor(Math.random() * firstname.length);
+        var randomfirstname = Math.floor(Math.random() * firstname.length);
         var randomlastname = Math.floor(Math.random() * lastname.length);
         var randomstreet = Math.floor(Math.random() * street.length);
-		    var randomhousNr = houseNumberGen(Math.floor(Math.random() * ( 2 ) + 1 ));
+        var randomhousNr = houseNumberGen(Math.floor(Math.random() * ( 2 ) + 1 ));
         var randomcity = Math.floor(Math.random() * city.length);
-	    	var randomzipCode = zipGen(5);
+        var randomzipCode = zipGen(5);
         var randomphoneNumber = numberGen(8);
         var randomiban = ibanGen(20);
         var randombank = Math.floor(Math.random() * bankname.length);
@@ -548,43 +548,43 @@
 
       return email;
     }
-	
-	//generate the phone number 
-	function numberGen(length)
-	{
-		var result = '0';	//prefix start always with 0 (germany)
-		var vrw_length = Math.floor(Math.random() * (4 - 2 + 1)) + 2;	//random length between 2-4 for the prefix
-		
-		for (var i=0;i< vrw_length; ++i)
-			result += Math.floor(Math.random() * 9) + 1;
-	
-		result+='/';
-		
-		for(var i = 0; i < length; ++i)
-			result += Math.floor(Math.random() * 9);
-		
-		return result;
-	}
-	
-	//generate the zip code
-	function zipGen(length)
-	{
-		var result = '';
-		
-		for (var i = 0; i < length; i++)
-			result += Math.floor(Math.random() * 9) + 1; 
+  
+  //generate the phone number 
+  function numberGen(length)
+  {
+    var result = '0';	//prefix start always with 0 (germany)
+    var vrw_length = Math.floor(Math.random() * (4 - 2 + 1)) + 2;	//random length between 2-4 for the prefix
+    
+    for (var i=0;i< vrw_length; ++i)
+      result += Math.floor(Math.random() * 9) + 1;
+  
+    result+='/';
+    
+    for(var i = 0; i < length; ++i)
+      result += Math.floor(Math.random() * 9);
+    
+    return result;
+  }
+  
+  //generate the zip code
+  function zipGen(length)
+  {
+    var result = '';
+    
+    for (var i = 0; i < length; i++)
+      result += Math.floor(Math.random() * 9) + 1; 
 
       return result;
-	}
-	
-	//generate the house number 
-	function houseNumberGen(length)
-	{
-		var result = '';
-		result += Math.floor(Math.random() * 9) + 1;
+  }
+  
+  //generate the house number 
+  function houseNumberGen(length)
+  {
+    var result = '';
+    result += Math.floor(Math.random() * 9) + 1;
 
-		for (var i = 0; i < length; i++)
-			result += Math.floor(Math.random() * 9);
+    for (var i = 0; i < length; i++)
+      result += Math.floor(Math.random() * 9);
 
     return result;
-	}
+  }
